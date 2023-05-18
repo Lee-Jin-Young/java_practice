@@ -12,8 +12,8 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
-import test.dao.MenuDao;
-import test.dto.MenuDto;
+import test.dao.MemberDao;
+import test.dto.MemberDto;
 
 public class MyFrame extends JFrame {
 	public MyFrame(String title) {
@@ -42,8 +42,8 @@ public class MyFrame extends JFrame {
 		add(scroll, BorderLayout.CENTER);
 		
 		//DB에 있는 데이터를 추가
-		List<MenuDto> list = new MenuDao().getList();
-		for(MenuDto dto : list) {
+		List<MemberDto> list = new MemberDao().getList();
+		for(MemberDto dto : list) {
 			Object[] row = {dto.getNum(), dto.getName(), dto.getAddr()};
 			model.addRow(row);
 		}
